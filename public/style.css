@@ -1285,3 +1285,8 @@ small.i18n,
   font: 0.75rem ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   color: var(--muted);
 }
+
+.layers .w18 { width: 18%; }
+.layers .w9 { width: 9%; }
+.layers .w41 { width: 41%; }
+.layers .w6 { width: 6%; }

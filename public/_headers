@@ -6,3 +6,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# CSS sin caché larga: cada publicación cambia el diseño y el navegador revalida con ETag (304).
+/style.css
+  Cache-Control: public, max-age=0, must-revalidate
