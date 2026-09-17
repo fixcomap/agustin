@@ -3,131 +3,408 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agustín Prieto — DevOps</title>
-  <meta name="description" content="Agustín Prieto, ingeniero DevOps. Infraestructura como código, pipelines sin credenciales de larga duración y coste cero: fixcomap/platform explicado.">
+  <title>Agustín Prieto — DevOps Engineer · SRE</title>
+  <meta name="description" content="Agustín Maximiliano Prieto, DevOps Engineer y SRE en Málaga. Kubernetes, Azure, AWS y GCP, CI/CD e infraestructura como código. / DevOps Engineer and SRE based in Málaga, Spain.">
+  <meta name="theme-color" content="#0b1220">
+  <meta property="og:title" content="Agustín Prieto — DevOps Engineer · SRE">
+  <meta property="og:description" content="Kubernetes, multi-cloud, CI/CD e infraestructura como código. Seis años en DevOps, diez en IT.">
+  <meta property="og:image" content="https://agustin.fixcomap.com/assets/agustin.jpg">
+  <meta property="og:url" content="https://agustin.fixcomap.com">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-  <main>
-    <header>
-      <img src="/assets/agustin.jpg" alt="Agustín Prieto" width="128" height="128">
-      <h1>Agustín Prieto</h1>
-      <p class="tagline">Ingeniero DevOps. Infraestructura como código, pipelines y seguridad, sin gastar más de lo necesario.</p>
-      <nav>
-        <a href="https://github.com/agustinprieto97">GitHub</a>
-        <a href="https://www.linkedin.com/in/TODO">LinkedIn</a>
-        <a href="/assets/cv-agustin.pdf">CV (PDF)</a>
-        <a href="mailto:hola@fixcomap.com">hola@fixcomap.com</a>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="https://fixcomap.com" title="fixcomap.com">fixcomap<span>/agustin</span></a>
+      <nav class="top-nav" aria-label="Secciones">
+        <a href="#flujo" class="i18n"><span class="es">Cómo trabajo</span><span class="en" lang="en">How I work</span></a>
+        <a href="#experiencia" class="i18n"><span class="es">Experiencia</span><span class="en" lang="en">Experience</span></a>
+        <a href="#stack">Stack</a>
+        <a href="#platform" class="i18n"><span class="es">Caso real</span><span class="en" lang="en">Case study</span></a>
+        <a href="#formacion" class="i18n"><span class="es">Certificaciones</span><span class="en" lang="en">Certifications</span></a>
+        <a href="#contacto" class="i18n"><span class="es">Contacto</span><span class="en" lang="en">Contact</span></a>
       </nav>
-    </header>
+      <span class="lang-pill i18n" aria-hidden="true"><span class="es">ES</span><span class="en">EN</span></span>
+    </div>
+  </header>
 
-    <section>
-      <h2>Sobre mí</h2>
-      <p>
-        <!-- TODO: 3-4 líneas: años de experiencia, en qué entornos, qué te gusta resolver. -->
-        Trabajo en operaciones y plataforma. Lo que me interesa no es la herramienta sino la cadena entera:
-        que un cambio llegue a producción de forma repetible, con permisos mínimos, y que cuando algo falle
-        se sepa antes de que lo note nadie.
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="kicker"><span class="dot"></span><span class="i18n"><span class="es">Disponible para proyectos remotos · Málaga, España</span><span class="en" lang="en">Available for remote projects · Málaga, Spain</span></span></p>
+        <h1>Agustín <span class="accent">Prieto</span></h1>
+        <p class="role">DevOps Engineer · SRE · Multi-cloud &amp; Kubernetes</p>
+        <p class="lead i18n">
+          <span class="es">Ingeniero DevOps y SRE con diez años de trayectoria en IT, seis de ellos diseñando,
+          automatizando y operando plataformas en Azure, AWS y GCP. Especializado en Kubernetes y OpenShift,
+          integración y entrega continua (GitHub Actions, Jenkins, GitLab CI), infraestructura como código
+          (Terraform, Ansible) y observabilidad (Grafana, Elastic).</span>
+          <span class="en" lang="en">DevOps and SRE engineer with ten years in IT, six of them designing, automating and
+          operating platforms on Azure, AWS and GCP. Specialised in Kubernetes and OpenShift, continuous
+          integration and delivery (GitHub Actions, Jenkins, GitLab CI), infrastructure as code (Terraform,
+          Ansible) and observability (Grafana, Elastic).</span>
+        </p>
+        <div class="cta">
+          <a class="btn primary i18n" href="#flujo"><span class="es">De un commit a producción</span><span class="en" lang="en">From commit to production</span></a>
+          <a class="btn" href="/assets/cv-agustin.pdf">CV (PDF)</a>
+          <a class="btn" href="https://www.linkedin.com/in/agustinmaximilianoprieto/">LinkedIn</a>
+          <a class="btn" href="https://github.com/agustinprieto97">GitHub</a>
+        </div>
+        <ul class="stats" aria-label="Resumen">
+          <li><strong>10</strong><span class="i18n"><span class="es">años en IT</span><span class="en" lang="en">years in IT</span></span></li>
+          <li><strong>6</strong><span class="i18n"><span class="es">años DevOps / SRE</span><span class="en" lang="en">years DevOps / SRE</span></span></li>
+          <li><strong>3</strong><span>clouds: Azure · AWS · GCP</span></li>
+          <li><strong>2</strong><span class="i18n"><span class="es">países: Argentina · España</span><span class="en" lang="en">countries: Argentina · Spain</span></span></li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait">
+          <img src="/assets/agustin.jpg" alt="Agustín Prieto" width="800" height="800">
+        </div>
+        <pre class="term"><code><span class="p">$</span> kubectl get pods -n api
+NAME            READY   STATUS    RESTARTS   AGE
+api-7d9f4-x2kq  1/1     Running   0          3m
+api-7d9f4-p8ns  1/1     Running   0          3m
+api-7d9f4-m1vc  1/1     Running   0          3m
+<span class="p">$</span> kubectl rollout status deploy/api -n api
+<span class="ok">deployment "api" successfully rolled out</span>
+<span class="p">$</span> tofu plan -detailed-exitcode
+<span class="ok">No changes.</span> Your infrastructure matches the configuration.</code></pre>
+      </div>
+    </section>
+
+    <!-- FLUJO -->
+    <section id="flujo" class="wrap section">
+      <h2><span class="num">01</span> <span class="i18n"><span class="es">De un commit a producción</span><span class="en" lang="en">From a commit to production</span></span></h2>
+      <p class="intro i18n">
+        <span class="es">Recorrido completo de un cambio de código, desde el commit hasta su operación en producción, con
+        las herramientas que intervienen en cada fase. Es el modelo de entrega que implanto en cualquier equipo:
+        automatizado de extremo a extremo, con identidades de mínimo privilegio y sin intervención manual sobre
+        los entornos. El punto que recorre el diagrama representa el commit.</span>
+        <span class="en" lang="en">The full journey of a code change, from commit to production operations, with the tools involved
+        at each stage. It is the delivery model I put in place in any team: automated end to end, with
+        least-privilege identities and no manual intervention on the environments. The dot moving across the
+        diagram represents the commit.</span>
       </p>
+
+      <div class="demo">
+        <ol class="track">
+          <li class="node n1"><span class="ico">git</span><b>Commit</b><small>feature/* · pre-commit</small></li>
+          <li class="node n2"><span class="ico">CI</span><b>Pull request</b><small>GitHub Actions · CodeQL · trivy · plan</small></li>
+          <li class="node n3"><span class="ico">✓</span><b class="i18n"><span class="es">Revisión</span><span class="en" lang="en">Review</span></b><small class="i18n"><span class="es">1 aprobación · rulesets</span><span class="en" lang="en">1 approval · rulesets</span></small></li>
+          <li class="node n4"><span class="ico">img</span><b>Build</b><small>Docker · SBOM · cosign</small></li>
+          <li class="node n5"><span class="ico">IaC</span><b class="i18n"><span class="es">Infraestructura</span><span class="en" lang="en">Infrastructure</span></b><small>OpenTofu · OIDC</small></li>
+          <li class="node n6"><span class="ico">k8s</span><b>Rollout</b><small>Kubernetes · Cloud Run</small></li>
+          <li class="node n7"><span class="ico">200</span><b class="i18n"><span class="es">En producción</span><span class="en" lang="en">In production</span></b><small class="i18n"><span class="es">smoke test · dominio</span><span class="en" lang="en">smoke test · domain</span></small></li>
+          <li class="node n8"><span class="ico">obs</span><b class="i18n"><span class="es">Operación</span><span class="en" lang="en">Operations</span></b><small class="i18n"><span class="es">Grafana · alertas · drift</span><span class="en" lang="en">Grafana · alerts · drift</span></small></li>
+          <li class="packet" aria-hidden="true"></li>
+        </ol>
+
+        <div class="demo-out">
+          <pre class="term log"><code><span class="l l1"><span class="p">$</span> git commit -m "feat(api): endpoint /orders" &amp;&amp; git push
+<span class="ok">✓</span> pre-commit · gitleaks: <span class="i18n"><span class="es">sin secretos</span><span class="en" lang="en">no secrets</span></span></span>
+<span class="l l2"><span class="p">$</span> gh pr create --base develop   <span class="dim">#142</span>
+<span class="ok">✓</span> lint <span class="ok">✓</span> tests <span class="ok">✓</span> CodeQL <span class="ok">✓</span> trivy <span class="ok">✓</span> tofu plan: 2 to add, 0 to destroy</span>
+<span class="l l3"><span class="ok">✓</span> <span class="i18n"><span class="es">review: aprobada por agustinprieto97 · merge → main</span><span class="en" lang="en">review: approved by agustinprieto97 · merge → main</span></span></span>
+<span class="l l4"><span class="p">$</span> docker build · syft · cosign sign --yes sha256:9f3c…
+<span class="ok">✓</span> <span class="i18n"><span class="es">imagen firmada · registry: api:v1.4.0</span><span class="en" lang="en">image signed · registry: api:v1.4.0</span></span></span>
+<span class="l l5"><span class="p">$</span> tofu apply   <span class="dim">(OIDC · <span class="i18n"><span class="es">identidad</span><span class="en" lang="en">identity</span></span>: gh-deployer)</span>
+<span class="ok">✓</span> Apply complete! 2 added, 0 changed, 0 destroyed</span>
+<span class="l l6"><span class="p">$</span> kubectl rollout status deploy/api
+<span class="ok">✓</span> 3/3 ready · healthcheck OK</span>
+<span class="l l7"><span class="p">$</span> curl -sI https://app.fixcomap.com/orders | head -1
+<span class="ok">HTTP/2 200</span> · tag v1.4.0</span>
+<span class="l l8"><span class="ok">✓</span> <span class="i18n"><span class="es">grafana: p95 118 ms · errores 0,0 % · alertas: ninguna · drift: limpio</span><span class="en" lang="en">grafana: p95 118 ms · errors 0.0% · alerts: none · drift: clean</span></span></span></code></pre>
+
+          <div class="result" aria-hidden="true">
+            <!-- 1 · git -->
+            <div class="panel p1 ui">
+              <div class="ui-bar"><i class="t">git · feature/orders-endpoint</i></div>
+              <div class="diff">
+                <div class="file">api/handlers/orders.go</div>
+                <div class="ln add">+ func (h *Handler) Orders(w http.ResponseWriter, r *http.Request) {</div>
+                <div class="ln add">+     orders, err := h.repo.ListOrders(r.Context())</div>
+                <div class="ln add">+     if err != nil { http.Error(w, "…", 500); return }</div>
+                <div class="ln add">+     json.NewEncoder(w).Encode(orders)</div>
+                <div class="ln add">+ }</div>
+                <div class="ln ctx">  mux.HandleFunc("/healthz", healthz)</div>
+                <div class="ln add">+ mux.HandleFunc("/orders", h.Orders)</div>
+              </div>
+              <div class="ui-foot"><span class="chip ok">pre-commit ✓</span><span class="chip">gitleaks</span><span class="chip">gofmt</span></div>
+            </div>
+
+            <!-- 2 · pull request -->
+            <div class="panel p2 ui">
+              <div class="ui-bar"><i class="t">fixcomap/api · Pull request #142</i></div>
+              <div class="pr-title">feat(api): endpoint /orders <span class="chip open">Open</span></div>
+              <div class="pr-meta">api-team wants to merge 1 commit into <code>develop</code> from <code>feature/orders-endpoint</code></div>
+              <ul class="checks">
+                <li class="c1"><span class="tick"></span>lint + test <em>1m 02s</em></li>
+                <li class="c2"><span class="tick"></span>CodeQL <em>2m 11s</em></li>
+                <li class="c3"><span class="tick"></span>gitleaks + trivy <em>48s</em></li>
+                <li class="c4"><span class="tick"></span>tofu plan · 2 to add, 0 to destroy <em>1m 30s</em></li>
+                <li class="c5"><span class="tick"></span>preview · pr-142.api.pages.dev <em>55s</em></li>
+              </ul>
+            </div>
+
+            <!-- 3 · revisión -->
+            <div class="panel p3 ui">
+              <div class="ui-bar"><i class="t">Pull request #142 · Review</i></div>
+              <div class="review">
+                <div class="avatar">A</div>
+                <div>
+                  <b>Agustín Prieto</b> <span class="dim-u">agustinprieto97</span> <span class="chip ok">approved</span>
+                  <p>Plan revisado: 2 recursos nuevos, sin destrucciones. Preview verificada.</p>
+                </div>
+              </div>
+              <div class="rules-ok">
+                <span>✓ 1 approving review</span><span>✓ All checks passed</span><span>✓ Branch up to date</span>
+              </div>
+              <div class="merge-btn">Merge pull request</div>
+            </div>
+
+            <!-- 4 · build / registry -->
+            <div class="panel p4 ui">
+              <div class="ui-bar"><i class="t">Artifact Registry · europe-west1-docker.pkg.dev/…/api</i></div>
+              <div class="image">
+                <div class="img-row"><b>api:v1.4.0</b><span class="chip ok">signed · cosign</span></div>
+                <div class="img-row dim">sha256:9f3c1a7e…d41b · 5.2 MB · distroless/static</div>
+                <div class="layers"><i style="width:18%"></i><i style="width:9%"></i><i style="width:41%"></i><i style="width:6%"></i></div>
+                <div class="img-row dim">trivy: 0 CRITICAL · 0 HIGH &nbsp;·&nbsp; SBOM: 38 packages (syft)</div>
+              </div>
+            </div>
+
+            <!-- 5 · opentofu -->
+            <div class="panel p5 ui">
+              <div class="ui-bar"><i class="t">tofu apply · infra/app · identity gh-deployer (OIDC)</i></div>
+              <div class="plan">
+                <div class="ln add">+ google_cloud_run_v2_service.api</div>
+                <div class="ln add">    image = "…/api@sha256:9f3c1a7e…"</div>
+                <div class="ln add">+ google_monitoring_uptime_check_config.site["api"]</div>
+                <div class="ln ctx">  google_secret_manager_secret.database_url (unchanged)</div>
+                <div class="ln sum">Plan: 2 to add, 0 to change, 0 to destroy.</div>
+                <div class="ln ok">Apply complete! Resources: 2 added, 0 changed, 0 destroyed.</div>
+              </div>
+            </div>
+
+            <!-- 6 · kubernetes -->
+            <div class="panel p6 ui">
+              <div class="ui-bar"><i class="t">Kubernetes · deploy/api · namespace api</i></div>
+              <div class="k8s">
+                <div class="pods">
+                  <div class="pod k1"><b>api-7d9f4-x2kq</b><span>Running</span></div>
+                  <div class="pod k2"><b>api-7d9f4-p8ns</b><span>Running</span></div>
+                  <div class="pod k3"><b>api-7d9f4-m1vc</b><span>Running</span></div>
+                  <div class="pod old"><b>api-5c1b2-…</b><span>Terminated</span></div>
+                </div>
+                <div class="roll"><i></i></div>
+                <div class="dim">rolling update · maxSurge 1 · readiness /healthz · 3/3 ready</div>
+              </div>
+            </div>
+
+            <!-- 7 · app -->
+            <div class="panel p7">
+              <div class="browser">
+                <div class="bar"><span></span><span></span><span></span><i>app.fixcomap.com/orders</i></div>
+                <div class="page">
+                  <div class="ph title"></div>
+                  <div class="ph"></div>
+                  <div class="ph short"></div>
+                  <div class="badge">200 OK · v1.4.0</div>
+                </div>
+              </div>
+              <div class="dim center">TLS · HSTS · smoke test ✓ · tag v1.4.0</div>
+            </div>
+
+            <!-- 8 · grafana -->
+            <div class="panel p8 ui">
+              <div class="ui-bar"><i class="t">Grafana · api / overview · last 1h</i></div>
+              <div class="dash">
+                <div class="chart"><i class="area"></i></div>
+                <div class="metrics">
+                  <div class="m"><span>p95</span><b>118 ms</b><i class="spark"></i></div>
+                  <div class="m"><span class="i18n"><span class="es">errores</span><span class="en" lang="en">errors</span></span><b>0,0 %</b><i class="spark flat"></i></div>
+                  <div class="m"><span class="i18n"><span class="es">alertas</span><span class="en" lang="en">alerts</span></span><b>0</b><i class="spark flat"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Lo que he construido: <a href="https://github.com/fixcomap/platform">fixcomap/platform</a></h2>
-      <p>
-        Base de infraestructura en GCP para <a href="https://fixcomap.com">fixcomap</a>, construida con mi
-        hermano desde cero y en público. No hay producto todavía: hay la cadena que lo llevará a producción.
-        Esta misma página se publica con ella.
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="wrap section">
+      <h2><span class="num">02</span> <span class="i18n"><span class="es">Experiencia</span><span class="en" lang="en">Experience</span></span></h2>
+      <ol class="timeline">
+        <li>
+          <div class="when i18n"><span class="es">may 2024 — actualidad</span><span class="en" lang="en">May 2024 — present</span></div>
+          <div class="what">
+            <h3>DevOps Engineer · <span>agap2</span> <small class="i18n"><span class="es">España</span><span class="en" lang="en">Spain</span></small></h3>
+            <p class="i18n"><span class="es">Diseño y mantenimiento de un sistema de CI/CD centralizado (Bitbucket Pipelines, GitHub Actions, Jenkins) para despliegue y pruebas automatizadas. Administración y optimización de la infraestructura en Microsoft Azure (AKS, Blob Storage, Enterprise Applications, WebApps). Despliegue y orquestación de aplicaciones contenerizadas en Kubernetes; observabilidad con Grafana y Elastic.</span><span class="en" lang="en">Design and maintenance of a centralised CI/CD system (Bitbucket Pipelines, GitHub Actions, Jenkins) for automated deployment and testing. Administration and optimisation of Microsoft Azure infrastructure (AKS, Blob Storage, Enterprise Applications, WebApps). Deployment and orchestration of containerised applications on Kubernetes; observability with Grafana and Elastic.</span></p>
+            <ul class="tags"><li>Kubernetes</li><li>Azure</li><li>GitHub Actions</li><li>Bitbucket Pipelines</li><li>Jenkins</li><li>Docker</li><li>Grafana</li><li>Elastic</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when i18n"><span class="es">abr 2023 — feb 2024</span><span class="en" lang="en">Apr 2023 — Feb 2024</span></div>
+          <div class="what">
+            <h3>DevOps Engineer · <span>Talan</span> <small>Málaga</small></h3>
+            <p class="i18n"><span class="es">Administración de servicios en Azure y AWS, implantación de pipelines de Ansible para la gestión de post-configuración y automatización de operaciones con Python y Terraform.</span><span class="en" lang="en">Administration of Azure and AWS services, implementation of Ansible pipelines for post-configuration management, and operational automation with Python and Terraform.</span></p>
+            <ul class="tags"><li>Azure</li><li>AWS</li><li>Terraform</li><li>Ansible</li><li>Python</li><li>Grafana</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when i18n"><span class="es">may 2022 — jun 2023</span><span class="en" lang="en">May 2022 — Jun 2023</span></div>
+          <div class="what">
+            <h3>DevOps Engineer · <span>OTG — Open Technologies Group</span> <small class="i18n"><span class="es">São Paulo, Brasil · remoto</span><span class="en" lang="en">São Paulo, Brazil · remote</span></small></h3>
+            <p class="i18n"><span class="es">Construcción y mantenimiento del servidor GitLab y de los pipelines de CI/CD con Jenkins (Groovy) y Docker; gestión de la infraestructura con Ansible y monitorización con Grafana en entornos Linux y Windows.</span><span class="en" lang="en">Build and maintenance of the GitLab server and CI/CD pipelines with Jenkins (Groovy) and Docker; infrastructure management with Ansible and Grafana monitoring across Linux and Windows environments.</span></p>
+            <ul class="tags"><li>GitLab CI</li><li>Jenkins</li><li>Groovy</li><li>Docker Swarm</li><li>Ansible</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when i18n"><span class="es">nov 2021 — may 2022</span><span class="en" lang="en">Nov 2021 — May 2022</span></div>
+          <div class="what">
+            <h3>DevOps Engineer · SRE · <span>Contabilium</span> <small>Argentina</small></h3>
+            <p class="i18n"><span class="es">Orquestación de pipelines de Jenkins en Groovy, administración de Azure Cloud Services y automatización de tareas con Bash, Python y PowerShell.</span><span class="en" lang="en">Orchestration of Jenkins pipelines in Groovy, administration of Azure Cloud Services and task automation with Bash, Python and PowerShell.</span></p>
+            <ul class="tags"><li>Jenkins</li><li>Azure</li><li>Bash</li><li>Python</li><li>PowerShell</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when i18n"><span class="es">may 2020 — nov 2021</span><span class="en" lang="en">May 2020 — Nov 2021</span></div>
+          <div class="what">
+            <h3>DevOps Engineer · <span>ICBC Argentina</span> <small class="i18n"><span class="es">banca</span><span class="en" lang="en">banking</span></small></h3>
+            <p class="i18n"><span class="es">Orquestación de pipelines de Ansible, administración de la plataforma OpenShift e implantación del stack ELK y Grafana para la monitorización integral. Integración continua con GitLab CI.</span><span class="en" lang="en">Orchestration of Ansible pipelines, administration of the OpenShift platform and implementation of the ELK and Grafana stack for end-to-end monitoring. Continuous integration with GitLab CI.</span></p>
+            <ul class="tags"><li>OpenShift</li><li>Ansible</li><li>ELK</li><li>GitLab CI</li><li>Docker Swarm</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">2019 — 2020</div>
+          <div class="what">
+            <h3>System Administrator · DevOps Consultant <small>Global Hitss · Thomson Reuters · Magnético</small></h3>
+            <p class="i18n"><span class="es">Administración de sistemas y consultoría DevOps en proyectos de corta duración en Buenos Aires.</span><span class="en" lang="en">Systems administration and DevOps consulting on short-term engagements in Buenos Aires.</span></p>
+          </div>
+        </li>
+        <li>
+          <div class="when i18n"><span class="es">nov 2015 — mar 2019</span><span class="en" lang="en">Nov 2015 — Mar 2019</span></div>
+          <div class="what">
+            <h3>Help Desk Technician · <span>FixComAp</span> <small>Buenos Aires</small></h3>
+            <p class="i18n"><span class="es">Inicio de la trayectoria profesional y origen del nombre de la marca.</span><span class="en" lang="en">The start of the professional journey and the origin of the brand name.</span></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="wrap section">
+      <h2><span class="num">03</span> Stack</h2>
+      <div class="grid stack">
+        <div class="group"><h3>Cloud</h3><ul class="tags"><li>Azure · AKS, WebApps, Blob, Entra ID</li><li>AWS · EC2, S3, RDS, KMS, CloudWatch</li><li>GCP · Cloud Run, WIF, Artifact Registry, Secret Manager</li></ul></div>
+        <div class="group"><h3 class="i18n"><span class="es">Contenedores</span><span class="en" lang="en">Containers</span></h3><ul class="tags"><li>Kubernetes</li><li>OpenShift</li><li>Docker</li><li>Docker Swarm</li><li>distroless</li></ul></div>
+        <div class="group"><h3>CI/CD</h3><ul class="tags"><li>GitHub Actions</li><li>GitLab CI</li><li>Jenkins · Groovy</li><li>Bitbucket Pipelines</li><li>Azure DevOps</li><li>TeamCity</li><li>Renovate</li></ul></div>
+        <div class="group"><h3 class="i18n"><span class="es">IaC y automatización</span><span class="en" lang="en">IaC &amp; automation</span></h3><ul class="tags"><li>Terraform · OpenTofu</li><li>Ansible</li><li>Python</li><li>Bash</li><li>PowerShell</li><li>Go</li></ul></div>
+        <div class="group"><h3 class="i18n"><span class="es">Observabilidad</span><span class="en" lang="en">Observability</span></h3><ul class="tags"><li>Grafana</li><li>Prometheus</li><li>Elastic · ELK</li><li>Zabbix</li><li>Cloud Monitoring</li></ul></div>
+        <div class="group"><h3 class="i18n"><span class="es">Seguridad en el pipeline</span><span class="en" lang="en">Pipeline security</span></h3><ul class="tags"><li>OIDC · WIF</li><li>cosign</li><li>trivy</li><li>checkov · tflint</li><li>gitleaks</li><li>CodeQL</li></ul></div>
+      </div>
+    </section>
+
+    <!-- CASO REAL -->
+    <section id="platform" class="wrap section">
+      <h2><span class="num">04</span> <span class="i18n"><span class="es">Caso real</span><span class="en" lang="en">Case study</span></span>: <a href="https://github.com/fixcomap/platform">fixcomap/platform</a></h2>
+      <p class="intro i18n">
+        <span class="es">Implementación de este modelo, operativa y de código abierto: infraestructura en Google Cloud
+        gestionada con OpenTofu y GitHub Actions, sin credenciales de larga duración y sin cambios aplicados
+        manualmente. Desarrollada junto a mi hermano como base de plataforma para fixcomap; esta misma página
+        se publica a través de ese pipeline. Coste de explotación mensual: el dominio.</span>
+        <span class="en" lang="en">A working, open-source implementation of this model: Google Cloud infrastructure managed with
+        OpenTofu and GitHub Actions, with no long-lived credentials and no manually applied changes. Built
+        together with my brother as the platform foundation for fixcomap; this very page is published through
+        that pipeline. Monthly operating cost: the domain.</span>
       </p>
-      <dl class="work">
-        <dt>Cero claves de servicio</dt>
-        <dd>
-          GitHub Actions entra en GCP por <em>Workload Identity Federation</em> (OIDC). El pool solo acepta
-          tokens de la organización; cada service account se bindea a un repo, rama y environment concretos.
-          Una PR nunca tiene permiso de escritura.
-          <a href="https://github.com/fixcomap/platform/blob/main/infra/bootstrap/wif.tf">wif.tf</a>
-        </dd>
 
-        <dt>Capas con radio de explosión acotado</dt>
-        <dd>
-          Cuatro estados de OpenTofu, cuatro identidades: <code>bootstrap</code> (WIF, estado),
-          <code>platform</code> (IAM, secrets, registry: aplica con aprobación humana), <code>app</code>
-          (Cloud Run: aplica sola, no puede tocar IAM) y <code>dns</code> (Cloudflare).
-          <a href="https://github.com/fixcomap/platform#capas">README</a>
-        </dd>
-
-        <dt>Un solo camino a producción</dt>
-        <dd>
-          Cada merge en <code>main</code>: plan → apply con aprobación (solo si hay cambios) → build,
-          escaneo con trivy, firma keyless con cosign, deploy y tag de versión. Nada se aplica desde un
-          portátil.
-          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/deploy.yml">deploy.yml</a>
-        </dd>
-
-        <dt>El plan limpio es la verdad</dt>
-        <dd>
-          Un cron nocturno planifica todas las capas y abre un issue si alguien tocó algo a mano. Otro
-          inventaría recursos con coste fijo: cualquier PR que meta un balanceador, NAT o base de datos
-          gestionada se bloquea salvo que justifique el coste mensual.
-          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/drift.yml">drift.yml</a>
-          · <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/cost-guard.yml">cost-guard.yml</a>
-        </dd>
-
-        <dt>Pipelines como producto interno</dt>
-        <dd>
-          Los sitios estáticos de la organización no tienen pipeline propio: llaman a dos
-          <em>reusable workflows</em> con doce líneas. Checks, preview por PR, deploy a Cloudflare Pages
-          y smoke test viven en un sitio; cambiar el pipeline es una PR, no una por repo.
-          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/rw-pages-deploy.yml">rw-pages-deploy.yml</a>
-        </dd>
-
-        <dt>Que se pueda operar sin mí</dt>
-        <dd>
-          Uptime checks con alerta, aprobaciones que cualquiera del equipo puede dar, y un runbook con los
-          casos reales: deploy rojo, rollback, drift, credencial caducada, fin del free trial.
-          <a href="https://github.com/fixcomap/platform/blob/main/CONTRIBUTING.md#runbook-cuando-algo-está-en-rojo">Runbook</a>
-        </dd>
-      </dl>
-      <p class="cost">Coste mensual de todo lo anterior: el dominio.</p>
+      <div class="grid cards">
+        <article class="card">
+          <h3 class="i18n"><span class="es">Autenticación sin claves de servicio</span><span class="en" lang="en">Keyless authentication</span></h3>
+          <p class="i18n"><span class="es">GitHub Actions se autentica en Google Cloud mediante OIDC (Workload Identity Federation). Cada service account está vinculada a un repositorio, una rama y un environment concretos; las pull requests operan exclusivamente en modo lectura.</span><span class="en" lang="en">GitHub Actions authenticates to Google Cloud through OIDC (Workload Identity Federation). Each service account is bound to a specific repository, branch and environment; pull requests operate in read-only mode.</span></p>
+          <a href="https://github.com/fixcomap/platform/blob/main/infra/bootstrap/wif.tf">wif.tf →</a>
+        </article>
+        <article class="card">
+          <h3 class="i18n"><span class="es">Cuatro capas, cuatro identidades</span><span class="en" lang="en">Four layers, four identities</span></h3>
+          <p class="i18n"><span class="es">Estados de OpenTofu independientes: <code>bootstrap</code>, <code>platform</code> (IAM y secretos, con aprobación humana), <code>app</code> (Cloud Run, sin acceso a IAM) y <code>dns</code>. El radio de impacto de cualquier fallo queda acotado a su capa.</span><span class="en" lang="en">Independent OpenTofu states: <code>bootstrap</code>, <code>platform</code> (IAM and secrets, with human approval), <code>app</code> (Cloud Run, no IAM access) and <code>dns</code>. The blast radius of any failure is contained within its layer.</span></p>
+          <a href="https://github.com/fixcomap/platform#capas">README →</a>
+        </article>
+        <article class="card">
+          <h3 class="i18n"><span class="es">Un único camino a producción</span><span class="en" lang="en">A single path to production</span></h3>
+          <p class="i18n"><span class="es">Cada merge en <code>main</code> ejecuta plan, apply con aprobación únicamente si existen cambios, construcción de la imagen, análisis de vulnerabilidades, firma con cosign, despliegue y etiquetado de versión. Ningún cambio se aplica desde un equipo local.</span><span class="en" lang="en">Every merge into <code>main</code> runs plan, apply with approval only when changes exist, image build, vulnerability scanning, cosign signing, deployment and version tagging. No change is ever applied from a workstation.</span></p>
+          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/deploy.yml">deploy.yml →</a>
+        </article>
+        <article class="card">
+          <h3 class="i18n"><span class="es">Control de deriva y de coste</span><span class="en" lang="en">Drift and cost control</span></h3>
+          <p class="i18n"><span class="es">Una ejecución nocturna planifica todas las capas y abre una incidencia ante cualquier cambio manual. Un segundo control bloquea en las pull requests los recursos de coste fijo (balanceadores, NAT, bases de datos gestionadas) salvo justificación explícita.</span><span class="en" lang="en">A nightly run plans every layer and opens an issue on any manual change. A second control blocks fixed-cost resources (load balancers, NAT, managed databases) in pull requests unless explicitly justified.</span></p>
+          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/drift.yml">drift.yml →</a>
+        </article>
+        <article class="card">
+          <h3 class="i18n"><span class="es">Pipelines reutilizables</span><span class="en" lang="en">Reusable pipelines</span></h3>
+          <p class="i18n"><span class="es">Los sitios estáticos de la organización no mantienen pipeline propio: invocan dos reusable workflows con una configuración de doce líneas. Previews por pull request, despliegue en Cloudflare Pages y smoke tests se mantienen en un único lugar.</span><span class="en" lang="en">The organisation's static sites keep no pipeline of their own: they invoke two reusable workflows through a twelve-line configuration. Pull request previews, Cloudflare Pages deployments and smoke tests are maintained in a single place.</span></p>
+          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/rw-pages-deploy.yml">rw-pages-deploy.yml →</a>
+        </article>
+        <article class="card">
+          <h3 class="i18n"><span class="es">Operable sin dependencia de una persona</span><span class="en" lang="en">Operable without a single point of failure</span></h3>
+          <p class="i18n"><span class="es">Comprobaciones de disponibilidad con alertas al equipo, aprobaciones distribuidas y un runbook con los escenarios reales: despliegue fallido, rollback, deriva, credenciales caducadas y fin del periodo de prueba.</span><span class="en" lang="en">Availability checks with team-wide alerting, distributed approvals and a runbook covering the real scenarios: failed deployment, rollback, drift, expired credentials and end of the trial period.</span></p>
+          <a href="https://github.com/fixcomap/platform/blob/main/CONTRIBUTING.md#runbook-cuando-algo-está-en-rojo">Runbook →</a>
+        </article>
+      </div>
     </section>
 
-    <section>
-      <h2>Cómo trabajo</h2>
-      <ul>
-        <li>El coste manda: nada fuera del free tier sin una cifra mensual delante.</li>
-        <li>Si algo parece necesitar una credencial de larga duración, el enfoque está mal.</li>
-        <li>Todo por pipeline, con la identidad mínima para cada paso.</li>
-        <li>Nada está hecho hasta que el plan sale limpio.</li>
-        <li>Sin módulos ni abstracciones hasta que haya repetición real.</li>
-      </ul>
+    <!-- CERTIFICACIONES -->
+    <section id="formacion" class="wrap section">
+      <h2><span class="num">05</span> <span class="i18n"><span class="es">Certificaciones e idiomas</span><span class="en" lang="en">Certifications &amp; languages</span></span></h2>
+      <div class="grid two">
+        <div class="group">
+          <h3 class="i18n"><span class="es">Certificaciones</span><span class="en" lang="en">Certifications</span></h3>
+          <ul class="list">
+            <li><strong>Red Hat DO380</strong> · OpenShift Administration III: Scaling Kubernetes Deployments in the Enterprise</li>
+            <li><strong>Red Hat DO447</strong> · Advanced Automation: Ansible Best Practices</li>
+            <li><strong>AWS</strong> · Storage Gateway Deep Dive: Amazon S3 File Gateway</li>
+            <li><strong>Docker</strong> · <span class="i18n"><span class="es">de principiante a experto</span><span class="en" lang="en">from beginner to expert</span></span></li>
+            <li class="i18n"><span class="es">Técnico en hardware de PC</span><span class="en" lang="en">PC hardware technician</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3 class="i18n"><span class="es">Idiomas</span><span class="en" lang="en">Languages</span></h3>
+          <ul class="list">
+            <li class="i18n"><span class="es"><strong>Español</strong> · nativo</span><span class="en" lang="en"><strong>Spanish</strong> · native</span></li>
+            <li class="i18n"><span class="es"><strong>Inglés</strong> · profesional · B2</span><span class="en" lang="en"><strong>English</strong> · professional · B2</span></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Stack</h2>
-      <ul class="stack">
-        <li>GCP: Cloud Run, Artifact Registry, Secret Manager, Cloud Monitoring, Workload Identity Federation</li>
-        <li>OpenTofu, tflint, checkov</li>
-        <li>GitHub Actions (OIDC, environments, reusable workflows, Renovate), CodeQL</li>
-        <li>Cloudflare: DNS, Pages, Email Routing</li>
-        <li>Docker, distroless, trivy, cosign, gitleaks</li>
-        <li>Go, Bash</li>
-        <!-- TODO: añade lo que uses en el trabajo y no esté aquí (Kubernetes, Azure, Ansible, etc.). -->
-      </ul>
+    <!-- CONTACTO -->
+    <section id="contacto" class="wrap section contact">
+      <h2><span class="num">06</span> <span class="i18n"><span class="es">Contacto</span><span class="en" lang="en">Contact</span></span></h2>
+      <p class="i18n"><span class="es">Abierto a proyectos de ingeniería de plataforma, migraciones a Kubernetes y cloud, CI/CD y observabilidad, en remoto o en Málaga.</span><span class="en" lang="en">Open to platform engineering projects, Kubernetes and cloud migrations, CI/CD and observability, remote or in Málaga.</span></p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:agustinprieto.ok@gmail.com">agustinprieto.ok@gmail.com</a>
+        <a class="btn" href="/assets/cv-agustin.pdf">CV (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/in/agustinmaximilianoprieto/">LinkedIn</a>
+        <a class="btn" href="https://github.com/agustinprieto97">GitHub</a>
+      </div>
     </section>
-
-    <section>
-      <h2>Experiencia</h2>
-      <!-- TODO: una entrada por puesto: empresa (o "empresa del sector X" si prefieres no nombrarla), rol, fechas, 2-3 logros medibles. -->
-      <p>Detalle en el <a href="/assets/cv-agustin.pdf">CV en PDF</a>.</p>
-    </section>
-
-    <footer>
-      <p>
-        Publicado en Cloudflare Pages por el pipeline de
-        <a href="https://github.com/fixcomap/platform">fixcomap/platform</a> desde
-        <a href="https://github.com/fixcomap/agustin">fixcomap/agustin</a>.
-      </p>
-    </footer>
   </main>
+
+  <footer class="wrap">
+    <p class="i18n">
+      <span class="es">Publicado en Cloudflare Pages por el pipeline de
+      <a href="https://github.com/fixcomap/platform">fixcomap/platform</a> desde
+      <a href="https://github.com/fixcomap/agustin">fixcomap/agustin</a>. Sin JavaScript, sin cookies.</span>
+      <span class="en" lang="en">Published on Cloudflare Pages by the
+      <a href="https://github.com/fixcomap/platform">fixcomap/platform</a> pipeline from
+      <a href="https://github.com/fixcomap/agustin">fixcomap/agustin</a>. No JavaScript, no cookies.</span>
+    </p>
+  </footer>
 </body>
 </html>
