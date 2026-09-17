@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agustín Prieto — DevOps</title>
+  <meta name="description" content="Agustín Prieto, ingeniero DevOps. Infraestructura como código, pipelines sin credenciales de larga duración y coste cero: fixcomap/platform explicado.">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="/assets/agustin.jpg" alt="Agustín Prieto" width="128" height="128">
+      <h1>Agustín Prieto</h1>
+      <p class="tagline">Ingeniero DevOps. Infraestructura como código, pipelines y seguridad, sin gastar más de lo necesario.</p>
+      <nav>
+        <a href="https://github.com/agustinprieto97">GitHub</a>
+        <a href="https://www.linkedin.com/in/TODO">LinkedIn</a>
+        <a href="/assets/cv-agustin.pdf">CV (PDF)</a>
+        <a href="mailto:hola@fixcomap.com">hola@fixcomap.com</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Sobre mí</h2>
+      <p>
+        <!-- TODO: 3-4 líneas: años de experiencia, en qué entornos, qué te gusta resolver. -->
+        Trabajo en operaciones y plataforma. Lo que me interesa no es la herramienta sino la cadena entera:
+        que un cambio llegue a producción de forma repetible, con permisos mínimos, y que cuando algo falle
+        se sepa antes de que lo note nadie.
+      </p>
+    </section>
+
+    <section>
+      <h2>Lo que he construido: <a href="https://github.com/fixcomap/platform">fixcomap/platform</a></h2>
+      <p>
+        Base de infraestructura en GCP para <a href="https://fixcomap.com">fixcomap</a>, construida con mi
+        hermano desde cero y en público. No hay producto todavía: hay la cadena que lo llevará a producción.
+        Esta misma página se publica con ella.
+      </p>
+      <dl class="work">
+        <dt>Cero claves de servicio</dt>
+        <dd>
+          GitHub Actions entra en GCP por <em>Workload Identity Federation</em> (OIDC). El pool solo acepta
+          tokens de la organización; cada service account se bindea a un repo, rama y environment concretos.
+          Una PR nunca tiene permiso de escritura.
+          <a href="https://github.com/fixcomap/platform/blob/main/infra/bootstrap/wif.tf">wif.tf</a>
+        </dd>
+
+        <dt>Capas con radio de explosión acotado</dt>
+        <dd>
+          Cuatro estados de OpenTofu, cuatro identidades: <code>bootstrap</code> (WIF, estado),
+          <code>platform</code> (IAM, secrets, registry: aplica con aprobación humana), <code>app</code>
+          (Cloud Run: aplica sola, no puede tocar IAM) y <code>dns</code> (Cloudflare).
+          <a href="https://github.com/fixcomap/platform#capas">README</a>
+        </dd>
+
+        <dt>Un solo camino a producción</dt>
+        <dd>
+          Cada merge en <code>main</code>: plan → apply con aprobación (solo si hay cambios) → build,
+          escaneo con trivy, firma keyless con cosign, deploy y tag de versión. Nada se aplica desde un
+          portátil.
+          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/deploy.yml">deploy.yml</a>
+        </dd>
+
+        <dt>El plan limpio es la verdad</dt>
+        <dd>
+          Un cron nocturno planifica todas las capas y abre un issue si alguien tocó algo a mano. Otro
+          inventaría recursos con coste fijo: cualquier PR que meta un balanceador, NAT o base de datos
+          gestionada se bloquea salvo que justifique el coste mensual.
+          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/drift.yml">drift.yml</a>
+          · <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/cost-guard.yml">cost-guard.yml</a>
+        </dd>
+
+        <dt>Pipelines como producto interno</dt>
+        <dd>
+          Los sitios estáticos de la organización no tienen pipeline propio: llaman a dos
+          <em>reusable workflows</em> con doce líneas. Checks, preview por PR, deploy a Cloudflare Pages
+          y smoke test viven en un sitio; cambiar el pipeline es una PR, no una por repo.
+          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/rw-pages-deploy.yml">rw-pages-deploy.yml</a>
+        </dd>
+
+        <dt>Que se pueda operar sin mí</dt>
+        <dd>
+          Uptime checks con alerta, aprobaciones que cualquiera del equipo puede dar, y un runbook con los
+          casos reales: deploy rojo, rollback, drift, credencial caducada, fin del free trial.
+          <a href="https://github.com/fixcomap/platform/blob/main/CONTRIBUTING.md#runbook-cuando-algo-está-en-rojo">Runbook</a>
+        </dd>
+      </dl>
+      <p class="cost">Coste mensual de todo lo anterior: el dominio.</p>
+    </section>
+
+    <section>
+      <h2>Cómo trabajo</h2>
+      <ul>
+        <li>El coste manda: nada fuera del free tier sin una cifra mensual delante.</li>
+        <li>Si algo parece necesitar una credencial de larga duración, el enfoque está mal.</li>
+        <li>Todo por pipeline, con la identidad mínima para cada paso.</li>
+        <li>Nada está hecho hasta que el plan sale limpio.</li>
+        <li>Sin módulos ni abstracciones hasta que haya repetición real.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <ul class="stack">
+        <li>GCP: Cloud Run, Artifact Registry, Secret Manager, Cloud Monitoring, Workload Identity Federation</li>
+        <li>OpenTofu, tflint, checkov</li>
+        <li>GitHub Actions (OIDC, environments, reusable workflows, Renovate), CodeQL</li>
+        <li>Cloudflare: DNS, Pages, Email Routing</li>
+        <li>Docker, distroless, trivy, cosign, gitleaks</li>
+        <li>Go, Bash</li>
+        <!-- TODO: añade lo que uses en el trabajo y no esté aquí (Kubernetes, Azure, Ansible, etc.). -->
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experiencia</h2>
+      <!-- TODO: una entrada por puesto: empresa (o "empresa del sector X" si prefieres no nombrarla), rol, fechas, 2-3 logros medibles. -->
+      <p>Detalle en el <a href="/assets/cv-agustin.pdf">CV en PDF</a>.</p>
+    </section>
+
+    <footer>
+      <p>
+        Publicado en Cloudflare Pages por el pipeline de
+        <a href="https://github.com/fixcomap/platform">fixcomap/platform</a> desde
+        <a href="https://github.com/fixcomap/agustin">fixcomap/agustin</a>.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>

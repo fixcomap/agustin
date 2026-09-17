@@ -1,0 +1,8 @@
+# Cabeceras que Cloudflare Pages aplica a todas las rutas. Sin JS, así que la CSP puede ser estricta.
+# HSTS solo para este host (sin includeSubDomains: el apex lo decide fixcomap/web).
+/*
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
