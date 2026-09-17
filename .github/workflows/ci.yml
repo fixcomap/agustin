@@ -30,7 +30,7 @@ jobs:
     needs: checks
     permissions:
       contents: read
-    uses: fixcomap/platform/.github/workflows/rw-pages-deploy.yml@main
+    uses: fixcomap/platform/.github/workflows/rw-pages-deploy.yml@feature/pages-deploy-no-list
     with:
       project_name: fixcomap-agustin
       site_dir: public
