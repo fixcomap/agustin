@@ -25,7 +25,9 @@
         <a href="#flujo" class="i18n"><span class="es">Cómo trabajo</span><span class="en" lang="en">How I work</span></a>
         <a href="#experiencia" class="i18n"><span class="es">Experiencia</span><span class="en" lang="en">Experience</span></a>
         <a href="#stack">Stack</a>
-        <a href="#platform" class="i18n"><span class="es">Caso real</span><span class="en" lang="en">Case study</span></a>
+        <a href="#platform" class="i18n"><span class="es">Plataforma</span><span class="en" lang="en">Platform</span></a>
+        <a href="#estandar" class="i18n"><span class="es">Seguridad</span><span class="en" lang="en">Security</span></a>
+        <a href="#proyectos" class="i18n"><span class="es">Proyectos</span><span class="en" lang="en">Projects</span></a>
         <a href="#formacion" class="i18n"><span class="es">Certificaciones</span><span class="en" lang="en">Certifications</span></a>
         <a href="#contacto" class="i18n"><span class="es">Contacto</span><span class="en" lang="en">Contact</span></a>
       </nav>
@@ -52,6 +54,7 @@
         </p>
         <div class="cta">
           <a class="btn primary i18n" href="#flujo"><span class="es">De un commit a producción</span><span class="en" lang="en">From commit to production</span></a>
+          <a class="btn i18n" href="#proyectos"><span class="es">Proyectos</span><span class="en" lang="en">Projects</span></a>
           <a class="btn" href="/assets/cv-agustin.pdf">CV (PDF)</a>
           <a class="btn" href="https://www.linkedin.com/in/agustinmaximilianoprieto/">LinkedIn</a>
           <a class="btn" href="https://github.com/agustinprieto97">GitHub</a>
@@ -182,7 +185,7 @@ api-7d9f4-m1vc  1/1     Running   0          3m
 
             <!-- 5 · opentofu -->
             <div class="panel p5 ui">
-              <div class="ui-bar"><i class="t">tofu apply · infra/app · identity gh-deployer (OIDC)</i></div>
+              <div class="ui-bar"><i class="t">tofu apply · infra/webapp · identity api-deployer (OIDC)</i></div>
               <div class="plan">
                 <div class="ln add">+ google_cloud_run_v2_service.api</div>
                 <div class="ln add">    image = "…/api@sha256:9f3c1a7e…"</div>
@@ -308,8 +311,9 @@ api-7d9f4-m1vc  1/1     Running   0          3m
         <div class="group"><h3 class="i18n"><span class="es">Contenedores</span><span class="en" lang="en">Containers</span></h3><ul class="tags"><li>Kubernetes</li><li>OpenShift</li><li>Docker</li><li>Docker Swarm</li><li>distroless</li></ul></div>
         <div class="group"><h3>CI/CD</h3><ul class="tags"><li>GitHub Actions</li><li>GitLab CI</li><li>Jenkins · Groovy</li><li>Bitbucket Pipelines</li><li>Azure DevOps</li><li>TeamCity</li><li>Renovate</li></ul></div>
         <div class="group"><h3 class="i18n"><span class="es">IaC y automatización</span><span class="en" lang="en">IaC &amp; automation</span></h3><ul class="tags"><li>Terraform · OpenTofu</li><li>Ansible</li><li>Python</li><li>Bash</li><li>PowerShell</li><li>Go</li></ul></div>
-        <div class="group"><h3 class="i18n"><span class="es">Observabilidad</span><span class="en" lang="en">Observability</span></h3><ul class="tags"><li>Grafana</li><li>Prometheus</li><li>Elastic · ELK</li><li>Zabbix</li><li>Cloud Monitoring</li></ul></div>
-        <div class="group"><h3 class="i18n"><span class="es">Seguridad en el pipeline</span><span class="en" lang="en">Pipeline security</span></h3><ul class="tags"><li>OIDC · WIF</li><li>cosign</li><li>trivy</li><li>checkov · tflint</li><li>gitleaks</li><li>CodeQL</li></ul></div>
+        <div class="group"><h3 class="i18n"><span class="es">Observabilidad</span><span class="en" lang="en">Observability</span></h3><ul class="tags"><li>Grafana</li><li>OpenTelemetry</li><li>Prometheus</li><li>Elastic · ELK</li><li>Zabbix</li><li>Cloud Monitoring</li></ul></div>
+        <div class="group"><h3 class="i18n"><span class="es">Seguridad en el pipeline</span><span class="en" lang="en">Pipeline security</span></h3><ul class="tags"><li>OIDC · WIF</li><li>cosign</li><li>trivy</li><li>checkov · tflint</li><li>gitleaks</li><li>CodeQL</li><li>Cloudflare Access</li></ul></div>
+        <div class="group"><h3 class="i18n"><span class="es">Aplicaciones</span><span class="en" lang="en">Applications</span></h3><ul class="tags"><li>Go</li><li>Node · Express</li><li>React · Vite</li><li>PostgreSQL · Neon</li><li>PWA</li></ul></div>
       </div>
     </section>
 
@@ -317,53 +321,189 @@ api-7d9f4-m1vc  1/1     Running   0          3m
     <section id="platform" class="wrap section">
       <h2><span class="num">04</span> <span class="i18n"><span class="es">Caso real</span><span class="en" lang="en">Case study</span></span>: <a href="https://github.com/fixcomap/platform">fixcomap/platform</a></h2>
       <p class="intro i18n">
-        <span class="es">Implementación de este modelo, operativa y de código abierto: infraestructura en Google Cloud
-        gestionada con OpenTofu y GitHub Actions, sin credenciales de larga duración y sin cambios aplicados
-        manualmente. Desarrollada junto a mi hermano como base de plataforma para fixcomap; esta misma página
-        se publica a través de ese pipeline. Coste de explotación mensual: el dominio.</span>
-        <span class="en" lang="en">A working, open-source implementation of this model: Google Cloud infrastructure managed with
-        OpenTofu and GitHub Actions, with no long-lived credentials and no manually applied changes. Built
-        together with my brother as the platform foundation for fixcomap; this very page is published through
-        that pipeline. Monthly operating cost: the domain.</span>
+        <span class="es">Una plataforma interna, operativa y de código abierto, que construí junto a mi hermano para
+        fixcomap: infraestructura en Google Cloud y Cloudflare gestionada con OpenTofu, un catálogo de proyectos
+        y un único pipeline que usan todos los repositorios. Dar de alta una aplicación nueva es añadir un fichero
+        YAML; esta misma página se publica a través de ella. Coste de explotación mensual: el dominio.</span>
+        <span class="en" lang="en">An internal, working, open-source platform I built with my brother for fixcomap:
+        Google Cloud and Cloudflare infrastructure managed with OpenTofu, a project catalogue and a single pipeline
+        shared by every repository. Onboarding a new application means adding one YAML file; this very page is
+        published through it. Monthly operating cost: the domain.</span>
       </p>
+
+      <ul class="cifras" aria-label="Cifras de la plataforma">
+        <li><strong>9</strong><span class="i18n"><span class="es">repositorios</span><span class="en" lang="en">repositories</span></span></li>
+        <li><strong>3</strong><span class="i18n"><span class="es">webapps en producción</span><span class="en" lang="en">web apps in production</span></span></li>
+        <li><strong>47</strong><span class="i18n"><span class="es">versiones del pipeline</span><span class="en" lang="en">pipeline versions</span></span></li>
+        <li><strong>370+</strong><span class="i18n"><span class="es">pull requests, todas con checks</span><span class="en" lang="en">pull requests, all gated</span></span></li>
+        <li><strong>0</strong><span class="i18n"><span class="es">claves de servicio</span><span class="en" lang="en">service account keys</span></span></li>
+        <li><strong>0</strong><span class="i18n"><span class="es">alertas de CodeQL abiertas</span><span class="en" lang="en">open CodeQL alerts</span></span></li>
+      </ul>
+
+      <!-- ARQUITECTURA -->
+      <figure class="arq" aria-labelledby="arq-pie">
+        <div class="arq-col">
+          <p class="arq-tit i18n"><span class="es">Repositorios</span><span class="en" lang="en">Repositories</span></p>
+          <ul class="arq-repos">
+            <li>florindario</li><li>jjpachangas</li><li>plantilla</li><li>reservas</li>
+            <li class="st">web</li><li class="st">agustin</li><li class="st">elias</li><li class="st">docs</li>
+          </ul>
+          <p class="arq-nota"><code>ci.yml</code> <span class="i18n"><span class="es">idéntico en todos</span><span class="en" lang="en">identical everywhere</span></span></p>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><code>uses @v0.39.0</code></div>
+        <div class="arq-col arq-centro">
+          <p class="arq-tit">fixcomap/platform</p>
+          <div class="arq-caja"><b>catalog/&lt;app&gt;.yaml</b><small class="i18n"><span class="es">tipo, dominios, migraciones, secretos</span><span class="en" lang="en">type, domains, migrations, secrets</span></small></div>
+          <div class="arq-caja"><b>cicd.yml</b><small class="i18n"><span class="es">router: static o webapp</span><span class="en" lang="en">router: static or webapp</span></small></div>
+          <div class="arq-caja"><b class="i18n"><span class="es">checks obligatorios</span><span class="en" lang="en">required checks</span></b><small>lint · tests · Postgres · CodeQL · trivy · gitleaks</small></div>
+          <div class="arq-caja"><b>infra/</b><small class="i18n"><span class="es">identidad por app, secretos, DNS, monitoreo</span><span class="en" lang="en">per-app identity, secrets, DNS, monitoring</span></small></div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><code>OIDC · WIF</code></div>
+        <div class="arq-col">
+          <p class="arq-tit i18n"><span class="es">Destinos</span><span class="en" lang="en">Targets</span></p>
+          <div class="arq-caja dest"><b>Cloudflare Pages</b><small class="i18n"><span class="es">sitios y fronts · Access en dev</span><span class="en" lang="en">sites and fronts · Access on dev</span></small></div>
+          <div class="arq-caja dest"><b>Cloud Run</b><small class="i18n"><span class="es">APIs · imagen firmada con cosign</span><span class="en" lang="en">APIs · cosign-signed image</span></small></div>
+          <div class="arq-caja dest"><b>Neon Postgres</b><small class="i18n"><span class="es">migraciones antes de cada deploy</span><span class="en" lang="en">migrations before every deploy</span></small></div>
+          <div class="arq-caja dest"><b>Grafana · Cloud Monitoring</b><small class="i18n"><span class="es">OpenTelemetry, SLOs, uptime</span><span class="en" lang="en">OpenTelemetry, SLOs, uptime</span></small></div>
+        </div>
+        <figcaption id="arq-pie">
+          <ol class="ramas">
+            <li><code>feature/*</code> → PR <span class="i18n"><span class="es">checks, nada se despliega</span><span class="en" lang="en">checks, nothing deploys</span></span></li>
+            <li><code>develop</code> <span class="i18n"><span class="es">entorno de desarrollo privado</span><span class="en" lang="en">private development environment</span></span></li>
+            <li><code>release/*</code> → <code>main</code> <span class="i18n"><span class="es">producción con aprobación</span><span class="en" lang="en">production with approval</span></span></li>
+            <li><code>hotfix/*</code> <span class="i18n"><span class="es">back-merge a develop</span><span class="en" lang="en">back-merged to develop</span></span></li>
+          </ol>
+        </figcaption>
+      </figure>
 
       <div class="grid cards">
         <article class="card">
-          <h3 class="i18n"><span class="es">Autenticación sin claves de servicio</span><span class="en" lang="en">Keyless authentication</span></h3>
-          <p class="i18n"><span class="es">GitHub Actions se autentica en Google Cloud mediante OIDC (Workload Identity Federation). Cada service account está vinculada a un repositorio, una rama y un environment concretos; las pull requests operan exclusivamente en modo lectura.</span><span class="en" lang="en">GitHub Actions authenticates to Google Cloud through OIDC (Workload Identity Federation). Each service account is bound to a specific repository, branch and environment; pull requests operate in read-only mode.</span></p>
+          <h3 class="i18n"><span class="es">El catálogo como única fuente</span><span class="en" lang="en">The catalogue as single source of truth</span></h3>
+          <p class="i18n"><span class="es">Cada proyecto se describe en <code>catalog/&lt;repo&gt;.yaml</code>: tipo, dominios, front, migraciones y secretos. El pipeline, los dominios, el monitoreo y los permisos se derivan de ahí; un repositorio sin entrada no despliega nada.</span><span class="en" lang="en">Each project is described in <code>catalog/&lt;repo&gt;.yaml</code>: type, domains, front end, migrations and secrets. Pipeline, domains, monitoring and permissions are all derived from it; a repository without an entry deploys nothing.</span></p>
+          <a href="https://github.com/fixcomap/platform/tree/main/catalog">catalog/ →</a>
+        </article>
+        <article class="card">
+          <h3 class="i18n"><span class="es">Un pipeline versionado para todos</span><span class="en" lang="en">One versioned pipeline for everyone</span></h3>
+          <p class="i18n"><span class="es">Los repositorios no mantienen pipeline propio: fijan <code>cicd.yml@vX.Y.Z</code> y un router decide si es un sitio estático o una webapp. Una mejora llega a cada proyecto de forma controlada, con una PR de una línea.</span><span class="en" lang="en">Repositories keep no pipeline of their own: they pin <code>cicd.yml@vX.Y.Z</code> and a router decides whether it is a static site or a web app. An improvement reaches each project in a controlled way, through a one-line PR.</span></p>
+          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/cicd.yml">cicd.yml →</a>
+        </article>
+        <article class="card">
+          <h3 class="i18n"><span class="es">Una identidad por aplicación</span><span class="en" lang="en">One identity per application</span></h3>
+          <p class="i18n"><span class="es">GitHub Actions entra en Google Cloud por OIDC, sin claves. Cada webapp despliega con su propia cuenta <code>&lt;app&gt;-deployer</code>, que solo alcanza sus servicios, su estado y sus secretos; los cambios de IAM se aplican tras revisar el plan.</span><span class="en" lang="en">GitHub Actions reaches Google Cloud through OIDC, with no keys. Each web app deploys with its own <code>&lt;app&gt;-deployer</code> account, scoped to its own services, state and secrets; IAM changes are applied only after the plan is reviewed.</span></p>
           <a href="https://github.com/fixcomap/platform/blob/main/infra/bootstrap/wif.tf">wif.tf →</a>
         </article>
         <article class="card">
-          <h3 class="i18n"><span class="es">Cuatro capas, cuatro identidades</span><span class="en" lang="en">Four layers, four identities</span></h3>
-          <p class="i18n"><span class="es">Estados de OpenTofu independientes: <code>bootstrap</code>, <code>platform</code> (IAM y secretos, con aprobación humana), <code>app</code> (Cloud Run, sin acceso a IAM) y <code>dns</code>. El radio de impacto de cualquier fallo queda acotado a su capa.</span><span class="en" lang="en">Independent OpenTofu states: <code>bootstrap</code>, <code>platform</code> (IAM and secrets, with human approval), <code>app</code> (Cloud Run, no IAM access) and <code>dns</code>. The blast radius of any failure is contained within its layer.</span></p>
-          <a href="https://github.com/fixcomap/platform#capas">README →</a>
+          <h3 class="i18n"><span class="es">Gitflow protegido, sin excepciones</span><span class="en" lang="en">Protected gitflow, no exceptions</span></h3>
+          <p class="i18n"><span class="es">Rulesets en <code>main</code> y <code>develop</code>: PR obligatoria, rama al día y check <code>cicd / ok</code> en verde. Releases y hotfixes versionados con back-merge, y producción detrás de un environment con aprobación humana.</span><span class="en" lang="en">Rulesets on <code>main</code> and <code>develop</code>: mandatory PR, up-to-date branch and a green <code>cicd / ok</code> check. Versioned releases and hotfixes with back-merges, and production behind an environment with human approval.</span></p>
+          <a href="https://github.com/fixcomap/platform/blob/main/CONTRIBUTING.md">CONTRIBUTING →</a>
         </article>
         <article class="card">
-          <h3 class="i18n"><span class="es">Un único camino a producción</span><span class="en" lang="en">A single path to production</span></h3>
-          <p class="i18n"><span class="es">Cada merge en <code>main</code> ejecuta plan, apply con aprobación únicamente si existen cambios, construcción de la imagen, análisis de vulnerabilidades, firma con cosign, despliegue y etiquetado de versión. Ningún cambio se aplica desde un equipo local.</span><span class="en" lang="en">Every merge into <code>main</code> runs plan, apply with approval only when changes exist, image build, vulnerability scanning, cosign signing, deployment and version tagging. No change is ever applied from a workstation.</span></p>
-          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/deploy.yml">deploy.yml →</a>
+          <h3 class="i18n"><span class="es">Entornos de desarrollo privados</span><span class="en" lang="en">Private development environments</span></h3>
+          <p class="i18n"><span class="es">Cada push a <code>develop</code> publica un entorno real, protegido con Cloudflare Access y restringido también en la propia API a una lista de cuentas. Se prueba con datos de verdad antes de abrir la release.</span><span class="en" lang="en">Every push to <code>develop</code> publishes a real environment, protected by Cloudflare Access and also restricted to an allow-list inside the API itself. Changes are tested against real data before a release is cut.</span></p>
+          <a href="https://github.com/fixcomap/platform#seguridad">README →</a>
         </article>
         <article class="card">
-          <h3 class="i18n"><span class="es">Control de deriva y de coste</span><span class="en" lang="en">Drift and cost control</span></h3>
-          <p class="i18n"><span class="es">Una ejecución nocturna planifica todas las capas y abre una incidencia ante cualquier cambio manual. Un segundo control bloquea en las pull requests los recursos de coste fijo (balanceadores, NAT, bases de datos gestionadas) salvo justificación explícita.</span><span class="en" lang="en">A nightly run plans every layer and opens an issue on any manual change. A second control blocks fixed-cost resources (load balancers, NAT, managed databases) in pull requests unless explicitly justified.</span></p>
+          <h3 class="i18n"><span class="es">Operación como código</span><span class="en" lang="en">Operations as code</span></h3>
+          <p class="i18n"><span class="es">Plan nocturno que abre una incidencia ante cualquier deriva, control de coste en cada PR, backups diarios con una identidad que escribe pero no borra, y monitoreo y alertas generados desde el catálogo.</span><span class="en" lang="en">A nightly plan that opens an issue on any drift, cost control on every PR, daily backups with an identity that can write but not delete, and monitoring and alerts generated from the catalogue.</span></p>
           <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/drift.yml">drift.yml →</a>
         </article>
-        <article class="card">
-          <h3 class="i18n"><span class="es">Pipelines reutilizables</span><span class="en" lang="en">Reusable pipelines</span></h3>
-          <p class="i18n"><span class="es">Los sitios estáticos de la organización no mantienen pipeline propio: invocan dos reusable workflows con una configuración de doce líneas. Previews por pull request, despliegue en Cloudflare Pages y smoke tests se mantienen en un único lugar.</span><span class="en" lang="en">The organisation's static sites keep no pipeline of their own: they invoke two reusable workflows through a twelve-line configuration. Pull request previews, Cloudflare Pages deployments and smoke tests are maintained in a single place.</span></p>
-          <a href="https://github.com/fixcomap/platform/blob/main/.github/workflows/rw-pages-deploy.yml">rw-pages-deploy.yml →</a>
+      </div>
+    </section>
+
+    <!-- ESTÁNDAR -->
+    <section id="estandar" class="wrap section">
+      <h2><span class="num">05</span> <span class="i18n"><span class="es">Estándar de seguridad y calidad</span><span class="en" lang="en">Security &amp; quality standard</span></span></h2>
+      <p class="intro i18n">
+        <span class="es">Lo que se exige a todas las aplicaciones, sin excepciones. Se define una vez en la plataforma
+        y llega a toda la organización: si una mejora no se puede aplicar a todas, no se aplica a ninguna.</span>
+        <span class="en" lang="en">What every application must meet, no exceptions. It is defined once in the platform
+        and reaches the whole organisation: if an improvement cannot apply to every app, it applies to none.</span>
+      </p>
+      <div class="grid estandar">
+        <div class="group">
+          <h3 class="i18n"><span class="es">En cada pull request</span><span class="en" lang="en">On every pull request</span></h3>
+          <ul class="checklist">
+            <li class="i18n"><span class="es">CodeQL obligatorio en los rulesets: una alerta nueva bloquea el merge</span><span class="en" lang="en">CodeQL required by rulesets: a new alert blocks the merge</span></li>
+            <li class="i18n"><span class="es">gitleaks, trivy (código, IaC e imágenes), checkov, tflint y actionlint</span><span class="en" lang="en">gitleaks, trivy (code, IaC and images), checkov, tflint and actionlint</span></li>
+            <li class="i18n"><span class="es">Lint y tests obligatorios en cada paquete; un paquete sin ellos no pasa</span><span class="en" lang="en">Mandatory lint and tests in every package; a package without them fails</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3 class="i18n"><span class="es">Tests contra una base real</span><span class="en" lang="en">Tests against a real database</span></h3>
+          <ul class="checklist">
+            <li class="i18n"><span class="es">El pipeline levanta un Postgres efímero y aplica las migraciones</span><span class="en" lang="en">The pipeline spins up an ephemeral Postgres and applies the migrations</span></li>
+            <li class="i18n"><span class="es">Tests de integración que recorren la API de verdad: altas, permisos, conflictos</span><span class="en" lang="en">Integration tests that drive the real API: sign-ups, permissions, conflicts</span></li>
+            <li class="i18n"><span class="es">Pasarelas externas simuladas: webhook de pago con firma válida e inválida, reembolsos</span><span class="en" lang="en">Simulated third parties: payment webhook with valid and invalid signatures, refunds</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3 class="i18n"><span class="es">En cada API</span><span class="en" lang="en">In every API</span></h3>
+          <ul class="checklist">
+            <li class="i18n"><span class="es">Defensa CSRF por <code>Origin</code> y escrituras solo en JSON</span><span class="en" lang="en">CSRF defence by <code>Origin</code> and JSON-only writes</span></li>
+            <li class="i18n"><span class="es">Límite de peticiones por IP; con registro abierto, también por usuario y con suspensión automática</span><span class="en" lang="en">Per-IP rate limits; with open sign-up, also per user with automatic suspension</span></li>
+            <li class="i18n"><span class="es">Sesiones en cookies <code>httpOnly</code>, <code>Secure</code> y <code>SameSite</code>; en la base, solo su hash</span><span class="en" lang="en"><code>httpOnly</code>, <code>Secure</code>, <code>SameSite</code> session cookies; only their hash is stored</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3 class="i18n"><span class="es">Cadena de suministro</span><span class="en" lang="en">Supply chain</span></h3>
+          <ul class="checklist">
+            <li class="i18n"><span class="es">Actions fijadas por SHA y lista cerrada de Actions permitidas</span><span class="en" lang="en">Actions pinned by SHA and a closed allow-list of Actions</span></li>
+            <li class="i18n"><span class="es">Imágenes firmadas con cosign (keyless) y analizadas con trivy antes de desplegar</span><span class="en" lang="en">Images signed with cosign (keyless) and scanned with trivy before deploying</span></li>
+            <li class="i18n"><span class="es">Dependencias al día con Renovate; secretos solo en Secret Manager</span><span class="en" lang="en">Dependencies kept current with Renovate; secrets only in Secret Manager</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="wrap section">
+      <h2><span class="num">06</span> <span class="i18n"><span class="es">Proyectos</span><span class="en" lang="en">Projects</span></span></h2>
+      <p class="intro i18n">
+        <span class="es">Aplicaciones reales que corren sobre la plataforma, con usuarios de verdad. Cada una pasa por el
+        mismo pipeline, el mismo estándar y el mismo camino a producción.</span>
+        <span class="en" lang="en">Real applications running on the platform, with real users. Each one goes through the
+        same pipeline, the same standard and the same path to production.</span>
+      </p>
+      <div class="grid proyectos">
+        <article class="proyecto">
+          <header><h3>Florindario</h3><span class="chip ok i18n"><span class="es">en producción</span><span class="en" lang="en">in production</span></span></header>
+          <p class="i18n"><span class="es">Calendario de trabajo para horarios rotativos: semanas tipo que se aplican a meses enteros, horas por semana y por mes, horas extra, vacaciones en días hábiles o naturales y sueldo estimado.</span><span class="en" lang="en">A work calendar for rotating shifts: template weeks applied to whole months, hours per week and month, overtime, holidays counted in working or calendar days, and an estimated payslip.</span></p>
+          <ul class="destacados">
+            <li class="i18n"><span class="es">App instalable que funciona sin conexión (service worker, solo lectura)</span><span class="en" lang="en">Installable app that works offline (service worker, read-only)</span></li>
+            <li class="i18n"><span class="es">Exporta a calendario (.ics) y PDF generados en el servidor con enlaces firmados de 5 minutos, para que funcione también en iPhone</span><span class="en" lang="en">Exports to calendar (.ics) and PDF, generated server-side through 5-minute signed links so it also works on iPhone</span></li>
+            <li class="i18n"><span class="es">Cuentas abiertas con protección automática ante abuso</span><span class="en" lang="en">Open sign-up with automatic abuse protection</span></li>
+          </ul>
+          <ul class="tags"><li>React</li><li>Node · Express</li><li>Postgres</li><li>PWA</li><li>Cloud Run</li></ul>
+          <a href="https://florindario.fixcomap.com">florindario.fixcomap.com →</a>
         </article>
-        <article class="card">
-          <h3 class="i18n"><span class="es">Operable sin dependencia de una persona</span><span class="en" lang="en">Operable without a single point of failure</span></h3>
-          <p class="i18n"><span class="es">Comprobaciones de disponibilidad con alertas al equipo, aprobaciones distribuidas y un runbook con los escenarios reales: despliegue fallido, rollback, deriva, credenciales caducadas y fin del periodo de prueba.</span><span class="en" lang="en">Availability checks with team-wide alerting, distributed approvals and a runbook covering the real scenarios: failed deployment, rollback, drift, expired credentials and end of the trial period.</span></p>
-          <a href="https://github.com/fixcomap/platform/blob/main/CONTRIBUTING.md#runbook-cuando-algo-está-en-rojo">Runbook →</a>
+        <article class="proyecto">
+          <header><h3>JJ Pachangas</h3><span class="chip ok i18n"><span class="es">en producción</span><span class="en" lang="en">in production</span></span></header>
+          <p class="i18n"><span class="es">Organizar partidos con amigos: se crea la pachanga, se comparte el link por WhatsApp y la gente se anota con su nombre, sin cuenta. Titulares y suplentes por orden de llegada.</span><span class="en" lang="en">Organising pickup games: create a match, share the link on WhatsApp and people sign up with just their name, no account. Starters and substitutes in order of arrival.</span></p>
+          <ul class="destacados">
+            <li class="i18n"><span class="es">Equipos con color de camiseta y desafíos entre dos grupos, cada uno con su capitán</span><span class="en" lang="en">Teams with shirt colours and challenges between two groups, each with its own captain</span></li>
+            <li class="i18n"><span class="es">Bajas y gestión del capitán con códigos secretos: en la base, solo su hash</span><span class="en" lang="en">Drop-outs and captain access through secret codes; only their hash is stored</span></li>
+            <li class="i18n"><span class="es">Las pachangas se borran solas un día después de jugarse</span><span class="en" lang="en">Matches delete themselves one day after being played</span></li>
+          </ul>
+          <ul class="tags"><li>React</li><li>Node · Express</li><li>Postgres</li><li>Cloud Run</li></ul>
+          <a href="https://jjpachangas.fixcomap.com">jjpachangas.fixcomap.com →</a>
+        </article>
+        <article class="proyecto">
+          <header><h3>Plantilla</h3><span class="chip ok i18n"><span class="es">en producción</span><span class="en" lang="en">in production</span></span></header>
+          <p class="i18n"><span class="es">Gestión de un equipo de fútbol para sus entrenadores: pasar lista en cada entreno, gestionar la plantilla y generar la imagen de convocados para el grupo.</span><span class="en" lang="en">Football team management for its coaches: take attendance at every training session, manage the squad and generate the call-up image for the group chat.</span></p>
+          <ul class="destacados">
+            <li class="i18n"><span class="es">Informe de jugadores en PDF generado en el servidor</span><span class="en" lang="en">Player report as a server-generated PDF</span></li>
+            <li class="i18n"><span class="es">Go sin framework, imagen distroless y trazas con OpenTelemetry</span><span class="en" lang="en">Framework-free Go, distroless image and OpenTelemetry tracing</span></li>
+            <li class="i18n"><span class="es">Tests de integración con <code>-race</code> contra Postgres en cada PR</span><span class="en" lang="en">Integration tests with <code>-race</code> against Postgres on every PR</span></li>
+          </ul>
+          <ul class="tags"><li>Go</li><li>Postgres</li><li>OpenTelemetry</li><li>Cloud Run</li></ul>
+          <a href="https://github.com/fixcomap/plantilla">fixcomap/plantilla →</a>
         </article>
       </div>
     </section>
 
     <!-- CERTIFICACIONES -->
     <section id="formacion" class="wrap section">
-      <h2><span class="num">05</span> <span class="i18n"><span class="es">Certificaciones e idiomas</span><span class="en" lang="en">Certifications &amp; languages</span></span></h2>
+      <h2><span class="num">07</span> <span class="i18n"><span class="es">Certificaciones e idiomas</span><span class="en" lang="en">Certifications &amp; languages</span></span></h2>
       <div class="grid two">
         <div class="group">
           <h3 class="i18n"><span class="es">Certificaciones</span><span class="en" lang="en">Certifications</span></h3>
@@ -387,7 +527,7 @@ api-7d9f4-m1vc  1/1     Running   0          3m
 
     <!-- CONTACTO -->
     <section id="contacto" class="wrap section contact">
-      <h2><span class="num">06</span> <span class="i18n"><span class="es">Contacto</span><span class="en" lang="en">Contact</span></span></h2>
+      <h2><span class="num">08</span> <span class="i18n"><span class="es">Contacto</span><span class="en" lang="en">Contact</span></span></h2>
       <p class="i18n"><span class="es">Abierto a proyectos de ingeniería de plataforma, migraciones a Kubernetes y cloud, CI/CD y observabilidad, en remoto o en Málaga.</span><span class="en" lang="en">Open to platform engineering projects, Kubernetes and cloud migrations, CI/CD and observability, remote or in Málaga.</span></p>
       <div class="cta">
         <a class="btn primary" href="mailto:agustinprieto.ok@gmail.com">agustinprieto.ok@gmail.com</a>
