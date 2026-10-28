@@ -1290,3 +1290,283 @@ small.i18n,
 .layers .w9 { width: 9%; }
 .layers .w41 { width: 41%; }
 .layers .w6 { width: 6%; }
+
+/* cifras de la plataforma */
+.cifras {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.75rem;
+}
+
+.cifras li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.cifras strong {
+  font-size: 1.7rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.cifras span {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+/* arquitectura: repos → platform → destinos, en columnas (apiladas en móvil) */
+.arq {
+  margin: 0 0 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgb(45 212 191 / 5%), transparent 60%), var(--card);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.arq-col {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+
+.arq-tit {
+  margin: 0;
+  font: 600 0.75rem ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.arq-repos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.arq-repos li {
+  font: 0.78rem ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgb(56 189 248 / 40%);
+  color: var(--fg);
+}
+
+.arq-repos li.st {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.arq-nota {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.arq-caja {
+  display: flex;
+  flex-direction: column;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 3%);
+}
+
+.arq-caja.dest {
+  border-left-color: var(--accent-2);
+}
+
+.arq-caja b {
+  font: 600 0.85rem ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.arq-caja small {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.arq-flecha {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+.arq-flecha code {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+}
+
+.arq-flecha::after {
+  content: "↓";
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.arq figcaption {
+  grid-column: 1 / -1;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.ramas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  counter-reset: rama;
+}
+
+.ramas li::before {
+  counter-increment: rama;
+  content: counter(rama);
+  display: inline-grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.45rem;
+  border-radius: 50%;
+  background: rgb(45 212 191 / 15%);
+  color: var(--accent);
+  font: 700 0.7rem ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.ramas code,
+.card code,
+.checklist code,
+.destacados code {
+  font-size: 0.85em;
+  color: var(--fg);
+}
+
+/* estándar de seguridad y calidad */
+.estandar {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+}
+
+.checklist,
+.destacados {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.checklist li,
+.destacados li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--ok);
+  font-weight: 700;
+}
+
+/* proyectos */
+.proyectos {
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.proyecto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.proyecto:hover {
+  border-color: rgb(45 212 191 / 50%);
+  transform: translateY(-2px);
+}
+
+.proyecto header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.proyecto h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.proyecto .chip.ok {
+  background: transparent;
+  color: var(--ok);
+  border-color: rgb(74 222 128 / 45%);
+}
+
+.proyecto > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.destacados {
+  flex: 1;
+  align-content: start;
+  color: var(--fg);
+  font-size: 0.9rem;
+}
+
+.destacados li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.proyecto > a {
+  font: 600 0.85rem ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (min-width: 56em) {
+  .arq {
+    grid-template-columns: 1fr auto 1.15fr auto 1fr;
+    align-items: start;
+  }
+
+  .arq-flecha {
+    align-self: center;
+    gap: 0.25rem;
+  }
+
+  .arq-flecha::after {
+    content: "→";
+  }
+}
